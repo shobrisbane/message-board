@@ -14,9 +14,9 @@
 
 <%= form_for(@message) do |f| %>
   名前:
-  <%= f.text_field :name %>
+  <%= f.textarea_field :name %>
 
   内容:
-  <%= f.text_field :body %>
+  <%= f.textarea_field :body %>
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
