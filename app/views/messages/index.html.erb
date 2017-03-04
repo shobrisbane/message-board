@@ -14,10 +14,15 @@
 
 <%= form_for(@message) do |f| %>
   名前:
-  <%= f.text_field :name, :size => "10x1",class: 'form-control'  %>
+  <%= f.text_field :name, :size => "10x1"%>
+  <%= f.text_field :name, :class: 'form-control'%>
+  <%= f.text_field :name, :id: 'exampleInputname', :placeholder="Enter name" %>
+  
   内容:
   <%= f.text_area :body, :size => "10x1" %>
-  
+  <%= f.text_area :body, :class: 'form-control'%>
+  <%= f.text_area :body, :id: 'exampleInputbody', :placeholder="Enter body" %>
+    
   <%= f.submit class: "btn btn-sm btn-primary" %>
   
 <% end %>
