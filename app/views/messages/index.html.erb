@@ -14,11 +14,9 @@
 
 <%= form_for(@message) do |f| %>
   名前:
-  <%= f.text_field :name, :size => "10x1",class: "form-control", id: "exampleInputname", placeholder: "Enter name" %>
   <div class="form-group"> <label for="message_name">名前:</label> <input class="form-control" type="text" name="message[name]" id="message_name" /> </div>
   
   内容:
-  <%= f.text_area :body, :size => "10x1",class: "form-control", id: "exampleInputname", placeholder: "Enter body" %>
   <div class="form-group"> <label for="message_body">内容:</label> <textarea class="form-control" name="message[body]" id="message_body"> </textarea> </div>    
   
   <%= f.submit class:"btn btn-sm btn-primary" %>
