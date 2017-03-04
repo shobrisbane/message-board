@@ -13,10 +13,8 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-  名前:
   <div class="form-group"> <label for="message_name">名前:</label> <input class="form-control" type="text" name="message[name]" id="message_name" /> </div>
   
-  内容:
   <div class="form-group"> <label for="message_body">内容:</label> <textarea class="form-control" name="message[body]" id="message_body"> </textarea> </div>    
   
   <%= f.submit class:"btn btn-sm btn-primary" %>
