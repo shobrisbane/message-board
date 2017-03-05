@@ -1,9 +1,7 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:edit, :update]
-  
-  # 中略
-
-  def edit
+ before_action :set_message, only: [:edit, :update]
+ 
+   def edit
   end
   
   def update
@@ -15,14 +13,32 @@ class MessagesController < ApplicationController
       render 'edit'
     end
   end
+ 
+  def index
+    @message = Message.new
+    # Messageを全て取得する。
+    @messages = Message.all
+  end
 
-  # 中略
-
+  def create
+    @message = Message.new(message_params)
+    if @message.save
+    redirect_to root_path , notice: 'メッセージを保存しました'
+  else
+    # メッセージが保存できなかった時
+    @messages = Message.all
+    flash.now[:alert] = "メッセージの保存に失敗しました。"
+    render 'index' 
+  end
+  
   private
-
-  # 中略
-
-  def set_message
+  
+  def message_params
+    params.require(:message).permit(:name, :body)
+  end
+end  
+    def set_message
     @message = Message.find(params[:id])
   end
 end
+  ## ここまで
