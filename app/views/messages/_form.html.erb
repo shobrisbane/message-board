@@ -10,12 +10,10 @@
         <% end %> 
       </ul>
     </div>
+  <% end %>
 
 <%= form_for(@message) do |f| %>
 <%= f.text_field :name, :size => "10x1",class: "form-control", id: "exampleInputname", placeholder: "Enter name" %>
 <%= f.text_area :body, :size => "10x1",class: "form-control", id: "exampleInputname", placeholder: "Enter body" %>
 <%= f.text_area :age, :size => "10x1",class: "form-control", id: "exampleInputage", placeholder: "Enter age" %>
-
-  
-  <%= f.submit class:"btn btn-sm btn-primary" %>
-<% end %>
+<%= f.submit class:"btn btn-sm btn-primary" %>
