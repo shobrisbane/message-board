@@ -46,5 +46,4 @@ end
     def set_message
     @message = Message.find(params[:id])
   end
-end
   ## ここまで
